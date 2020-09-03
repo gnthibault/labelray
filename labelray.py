@@ -82,32 +82,32 @@ class RoiManager(object):
         sy = 0.03
         label_font_size = 10
         ax_alpha = fig.add_axes([bx1, 0.1, sx, sy], facecolor=axcolor)
-        self.slider_alpha = Slider(ax_alpha, 'Length', 0, 10, valinit=0,
-                                   valstep=0.1)
+        self.slider_alpha = Slider(ax_alpha, 'Length', 0, 2, valinit=0,
+                                   valstep=0.01)
         self.slider_alpha.label.set_size(label_font_size)
         ax_beta = fig.add_axes([bx1, 0.15, sx, sy], facecolor=axcolor)
-        self.slider_beta = Slider(ax_beta, 'Smooth', 0, 10, valinit=1,
-                                   valstep=0.1)
+        self.slider_beta = Slider(ax_beta, 'Smooth', 0, 2, valinit=0.05,
+                                   valstep=0.01)
         self.slider_beta.label.set_size(label_font_size)
         ax_w_line = fig.add_axes([bx1, 0.2, sx, sy], facecolor=axcolor)
-        self.slider_w_line = Slider(ax_w_line, 'Bright', 0, 10, valinit=0.1,
-                                   valstep=0.1)
+        self.slider_w_line = Slider(ax_w_line, 'Bright', 0, 2, valinit=0.1,
+                                   valstep=0.01)
         self.slider_w_line.label.set_size(label_font_size)
         ax_w_edge = fig.add_axes([bx1, 0.25, sx, sy], facecolor=axcolor)
-        self.slider_edge = Slider(ax_w_edge, 'Edge', 0, 10, valinit=0,
-                                   valstep=0.1)
+        self.slider_edge = Slider(ax_w_edge, 'Edge', 0, 2, valinit=0,
+                                   valstep=0.01)
         self.slider_edge.label.set_size(label_font_size)
         ax_gamma = fig.add_axes([bx2, 0.15, sx, sy], facecolor=axcolor)
-        self.slider_gamma = Slider(ax_gamma, 'Step', 0.005, 2, valinit=0.010,
-                                   valstep=0.005)
+        self.slider_gamma = Slider(ax_gamma, 'Step', 0.001, 1, valinit=0.005,
+                                   valstep=0.001)
         self.slider_gamma.label.set_size(label_font_size)
         ax_max_px_move = fig.add_axes([bx2, 0.20, sx, sy], facecolor=axcolor)
-        self.slider_max_px_move = Slider(ax_max_px_move, 'Move px', 0, 10, valinit=2,
+        self.slider_max_px_move = Slider(ax_max_px_move, 'Move px', 0, 5, valinit=2,
                                    valstep=1)
         self.slider_max_px_move.label.set_size(label_font_size)
         ax_max_iterations = fig.add_axes([bx2, 0.25, sx, sy], facecolor=axcolor)
-        self.slider_max_iterations = Slider(ax_max_iterations, 'Nb iter', 0, 200, valinit=150,
-                                   valstep=5)
+        self.slider_max_iterations = Slider(ax_max_iterations, 'Nb iter', 0, 200, valinit=10,
+                                   valstep=1)
         self.slider_max_iterations.label.set_size(label_font_size)
 
         def update(val):
